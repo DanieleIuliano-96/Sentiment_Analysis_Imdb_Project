@@ -1,0 +1,7 @@
+/imdb_sentiment_analysis/model_result/nb_model_model.pkl
+/imdb_sentiment_analysis/model_result/nb_model_vectorizer.pkl
+/imdb_sentiment_analysis/model_result/rf_model_model.pkl
+/imdb_sentiment_analysis/model_result/rf_model_vectorizer.pkl
+/imdb_sentiment_analysis/model_result/svm_model_model.pkl
+/imdb_sentiment_analysis/model_result/svm_model_vectorizer.pkl
+/imdb_sentiment_analysis/IMDB-Dataset.csv
