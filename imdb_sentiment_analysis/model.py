@@ -31,7 +31,7 @@ def train_and_save_models(data):
 
     X = data['review']
     y = data['sentiment']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = (train_test_split(X, y, test_size=0.2, random_state=42))
 
     # Multinomial Naive Bayes
     nb_model = MultinomialNB()
@@ -39,7 +39,7 @@ def train_and_save_models(data):
     nb_accuracy, nb_report = train_and_evaluate_model(nb_model, count_vectorizer, X_train, y_train, X_test, y_test)
     print("Multinomial Naive Bayes Accuracy:", nb_accuracy)
     print("Classification Report:\n", nb_report)
-    save_model(nb_model, count_vectorizer, save_dir, 'nb_model')
+    # save_model(nb_model, count_vectorizer, save_dir, 'nb_model')
 
     # Support Vector Machine
     svm_model = SVC(kernel='linear', C=1.0)
@@ -47,14 +47,14 @@ def train_and_save_models(data):
     svm_accuracy, svm_report = train_and_evaluate_model(svm_model, tfidf_vectorizer, X_train, y_train, X_test, y_test)
     print("\nSupport Vector Machine Accuracy:", svm_accuracy)
     print("Classification Report:\n", svm_report)
-    save_model(svm_model, tfidf_vectorizer, save_dir, 'svm_model')
+    # save_model(svm_model, tfidf_vectorizer, save_dir, 'svm_model')
 
     # Random Forest Classifier
     rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
     rf_accuracy, rf_report = train_and_evaluate_model(rf_model, count_vectorizer, X_train, y_train, X_test, y_test)
     print("\nRandom Forest Classifier Accuracy:", rf_accuracy)
     print("Classification Report:\n", rf_report)
-    save_model(rf_model, count_vectorizer, save_dir, 'rf_model')
+    # save_model(rf_model, count_vectorizer, save_dir, 'rf_model')
 
 
 def save_model(model, vectorizer, save_dir, model_name):
